@@ -1009,6 +1009,52 @@ h6 {
   }
 }
 
+/* Abstracts Announcement */
+.abstracts-announcement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  background: linear-gradient(
+    135deg,
+    var(--primary-green) 0%,
+    var(--primary-green-dark) 100%
+  );
+  color: var(--white);
+  padding: var(--space-5) var(--space-8);
+  border-radius: var(--radius-lg);
+  margin-top: var(--space-10);
+  box-shadow: var(--shadow-md);
+}
+
+.abstracts-announcement svg {
+  width: 28px;
+  height: 28px;
+  color: var(--accent-gold);
+  flex-shrink: 0;
+}
+
+.abstracts-announcement p {
+  font-size: var(--text-lg);
+  margin: 0;
+}
+
+.abstracts-announcement strong {
+  color: var(--accent-gold);
+}
+
+@media (max-width: 768px) {
+  .abstracts-announcement {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-5);
+  }
+
+  .abstracts-announcement p {
+    font-size: var(--text-base);
+  }
+}
+
 /* ===== ABOUT TOFAC SECTION ===== */
 .about-tofac-section {
   padding: var(--space-24) 0;
@@ -1830,6 +1876,76 @@ h6 {
 
   .venue-map {
     height: 400px;
+  }
+}
+
+/* ===== HOTELS & TRANSPORTATION SECTION ===== */
+.hotels-section {
+  padding: var(--space-24) 0;
+  background: var(--gray-50);
+}
+
+.coming-soon-box {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--white);
+  padding: var(--space-16) var(--space-10);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 2px dashed var(--gray-300);
+}
+
+.coming-soon-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--space-6);
+  background: linear-gradient(
+    135deg,
+    var(--accent-gold-light) 0%,
+    var(--accent-gold) 100%
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coming-soon-icon svg {
+  width: 40px;
+  height: 40px;
+  color: var(--white);
+}
+
+.coming-soon-box h3 {
+  font-size: var(--text-3xl);
+  color: var(--primary-burgundy);
+  margin-bottom: var(--space-4);
+}
+
+.coming-soon-box p {
+  font-size: var(--text-lg);
+  color: var(--gray-700);
+  margin-bottom: var(--space-4);
+}
+
+.coming-soon-note {
+  font-size: var(--text-base) !important;
+  color: var(--gray-500) !important;
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .coming-soon-box {
+    padding: var(--space-10) var(--space-6);
+  }
+
+  .coming-soon-box h3 {
+    font-size: var(--text-2xl);
+  }
+
+  .coming-soon-box p {
+    font-size: var(--text-base);
   }
 }
 
