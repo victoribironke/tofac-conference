@@ -450,8 +450,8 @@ h6 {
 }
 
 .nav-logo img {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -608,6 +608,10 @@ h6 {
   .nav-link-cta {
     width: 100%;
     text-align: center;
+  }
+
+  .logo-text {
+    font-size: var(--text-base);
   }
 }
 
@@ -1763,6 +1767,106 @@ h6 {
   }
 }
 
+/* Payment Section */
+.payment-section {
+  margin-top: var(--space-20);
+  padding-top: var(--space-16);
+  border-top: 1px solid var(--gray-200);
+}
+
+.payment-title {
+  font-size: var(--text-2xl);
+  color: var(--primary-burgundy);
+  margin-bottom: var(--space-2);
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+  max-width: 900px;
+  margin: var(--space-10) auto 0;
+}
+
+.payment-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-200);
+}
+
+.payment-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-6);
+  color: var(--white);
+}
+
+.payment-card-header.naira {
+  background: linear-gradient(
+    135deg,
+    var(--primary-green) 0%,
+    var(--primary-green-dark) 100%
+  );
+}
+
+.payment-card-header.dollar {
+  background: linear-gradient(
+    135deg,
+    var(--primary-burgundy) 0%,
+    var(--primary-burgundy-dark) 100%
+  );
+}
+
+.payment-card-header svg {
+  width: 24px;
+  height: 24px;
+}
+
+.payment-card-header h4 {
+  font-size: var(--text-lg);
+  margin: 0;
+  color: var(--white);
+}
+
+.payment-card-body {
+  padding: var(--space-6);
+}
+
+.payment-detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.payment-detail:last-child {
+  border-bottom: none;
+}
+
+.payment-detail .label {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray-500);
+  font-weight: 600;
+}
+
+.payment-detail .value {
+  font-size: var(--text-base);
+  color: var(--gray-900);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .payment-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== VENUE SECTION ===== */
 .venue-section {
   padding: var(--space-24) 0;
@@ -1949,7 +2053,119 @@ h6 {
   }
 }
 
-/* ===== PAST CONFERENCES SECTION ===== */
+/* ===== PREVIOUS TOFAC CONFERENCES SECTION ===== */
+.previous-conferences-section {
+  padding: var(--space-24) 0;
+  background: var(--white);
+}
+
+.previous-conferences-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+}
+
+.previous-conference-card {
+  display: block;
+  background: var(--gray-50);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  border: 2px solid var(--gray-200);
+}
+
+.previous-conference-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-burgundy);
+}
+
+.conference-year {
+  background: linear-gradient(
+    135deg,
+    var(--primary-burgundy) 0%,
+    var(--primary-burgundy-dark) 100%
+  );
+  color: var(--white);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  padding: var(--space-6);
+  text-align: center;
+}
+
+.previous-conference-card:nth-child(2) .conference-year {
+  background: linear-gradient(
+    135deg,
+    var(--primary-green) 0%,
+    var(--primary-green-dark) 100%
+  );
+}
+
+.previous-conference-card:nth-child(3) .conference-year {
+  background: linear-gradient(
+    135deg,
+    var(--accent-gold) 0%,
+    var(--accent-orange) 100%
+  );
+}
+
+.conference-info {
+  padding: var(--space-6);
+}
+
+.conference-info h4 {
+  font-size: var(--text-xl);
+  color: var(--gray-900);
+  margin-bottom: var(--space-2);
+}
+
+.conference-theme {
+  font-size: var(--text-sm);
+  color: var(--gray-600);
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+  min-height: 60px;
+}
+
+.view-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--primary-burgundy);
+  transition: gap var(--transition-base);
+}
+
+.view-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.previous-conference-card:hover .view-link {
+  gap: var(--space-3);
+}
+
+@media (max-width: 1024px) {
+  .previous-conferences-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .previous-conferences-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .conference-theme {
+    min-height: auto;
+  }
+}
+
+/* ===== PAST CONFERENCES TIMELINE SECTION ===== */
 .timeline-section {
   padding: var(--space-24) 0;
   background: var(--gray-50);
@@ -2264,11 +2480,19 @@ h6 {
   margin-bottom: var(--space-16);
 }
 
-.footer-logo {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+.footer-logos {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
   margin-bottom: var(--space-4);
+}
+
+.footer-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .footer-tagline {
@@ -2405,8 +2629,14 @@ h6 {
     text-align: center;
   }
 
+  .footer-logos {
+    justify-content: center;
+    margin-bottom: var(--space-4);
+  }
+
   .footer-logo {
-    margin: 0 auto var(--space-4) auto;
+    width: 50px;
+    height: 50px;
   }
 }
 
