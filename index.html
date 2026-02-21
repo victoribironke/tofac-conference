@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -24,7 +24,11 @@
       TOFAC 2026 | Identities in Nigeria - Toyin Falola Annual Conference
     </title>
 
-    <link rel="shortcut icon" href="images/logo.jpeg" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="<?php echo get_stylesheet_directory_uri(); ?>/tofac-2026-images/logo.jpeg"
+      type="image/x-icon"
+    />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,7 +42,11 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css" />
+    <!-- <link
+      rel="stylesheet"
+      href="<?php echo get_stylesheet_directory_uri(); ?>/tofac2026.css"
+    /> -->
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <!-- Skip to main content for accessibility -->
@@ -48,7 +56,10 @@
     <nav class="navbar" id="navbar">
       <div class="nav-container">
         <a href="#" class="nav-logo">
-          <img src="images/logo.jpeg" alt="TOFAC Logo" />
+          <img
+            src="<?php echo get_stylesheet_directory_uri(); ?>/tofac-2026-images/logo.jpeg"
+            alt="TOFAC Logo"
+          />
           <span class="logo-text">TOFAC 2026</span>
         </a>
 
@@ -1084,17 +1095,17 @@
           <div class="footer-brand">
             <div class="footer-logos">
               <img
-                src="images/logo.jpeg"
+                src="<?php echo get_stylesheet_directory_uri(); ?>/tofac-2026-images/logo.jpeg"
                 alt="TOFAC Logo"
                 class="footer-logo"
               />
               <img
-                src="images/unijos.jpg"
+                src="<?php echo get_stylesheet_directory_uri(); ?>/tofac-2026-images/unijos.jpg"
                 alt="University of Jos"
                 class="footer-logo"
               />
               <img
-                src="images/jos-history-and-culture-society.png"
+                src="<?php echo get_stylesheet_directory_uri(); ?>/tofac-2026-images/jos-history-and-culture-society.png"
                 alt="Jos History and Culture Society"
                 class="footer-logo"
               />
@@ -1189,6 +1200,7 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
+    <!-- <script src="<?php echo get_stylesheet_directory_uri(); ?>/tofac2026.js"></script> -->
+    <script src="/script.js"></script>
   </body>
 </html>
