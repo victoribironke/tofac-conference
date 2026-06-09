@@ -639,6 +639,115 @@
         </div>
       </section>
 
+      <!-- ===== ACCEPTED PAPERS SECTION ===== -->
+      <section class="papers-section fade-in-section" id="papers">
+        <div class="container">
+          <div class="section-header centered">
+            <span class="eyebrow">Conference Program</span>
+            <h2 class="section-title">Accepted Papers</h2>
+            <p class="section-subtitle">
+              Explore the abstracts of papers accepted for presentation at TOFAC
+              2026.
+            </p>
+          </div>
+
+          <!-- ===== KEYNOTES SECTION ===== -->
+          <div class="keynotes-container">
+            <h3 class="subsection-title centered">KEYNOTES</h3>
+
+            <div class="keynotes-grid">
+              <div class="keynote-card">
+                <div class="keynote-number">1.</div>
+                <div class="keynote-details">
+                  <h4 class="keynote-title">
+                    IDENTITIES, POLITICS AND GOVERNANCE IN NIGERIA: CHALLENGES
+                    AND THE WAY FORWARD
+                  </h4>
+                  <p class="keynote-author">
+                    By <strong>Professor Attahiru M. Jega</strong>
+                  </p>
+                  <p class="keynote-bio">
+                    Distinguished Professor of Political Science/Political
+                    Economy,<br />
+                    Bayero University, Kano,<br />
+                    Pro-Chancellor and Chairman of Council, Usumanu Dan Fodio
+                    University, Sokoto,<br />
+                    immediate past Pro-Chancellor and Chairman of Council,
+                    University of Jos,<br />
+                    former Chairman, Independent National Electoral Commission
+                    (INEC),<br />
+                    former Vice-Chancellor, Bayero University, Kano,<br />
+                    former President, Academic Staff Union of Universities
+                    (ASUU).
+                  </p>
+                </div>
+              </div>
+
+              <div class="keynote-card">
+                <div class="keynote-number">2.</div>
+                <div class="keynote-details">
+                  <h4 class="keynote-title">THE ARCHITECTURE OF BELONGING</h4>
+                  <p class="keynote-author">
+                    By <strong>Professor Toyin Falola</strong>
+                  </p>
+                  <p class="keynote-bio">
+                    The Jacob and Frances Sanger Mossiker Chair in the
+                    Humanities<br />
+                    and Distinguished Teaching Professor,<br />
+                    Department of History,<br />
+                    University of Texas at Austin;<br />
+                    Africa’s most celebrated/decorated Scholar/Historian of the
+                    times.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="special-panel-card">
+              <h3 class="subsection-title centered">SPECIAL PANEL</h3>
+              <h4 class="panel-title">
+                ONE TREE, DIFFERENT BRANCHES:<br />DISSECTING PROFESSOR TOR JOE
+                IORAPUU’S ODYSSEY AND PHILOSOPHY
+              </h4>
+              <div class="panelists-wrapper">
+                <p><strong>Panelists:</strong></p>
+                <ul class="panelists-list">
+                  <li>1. Prof. Adediran K. Ademiju-Bepo</li>
+                  <li>2. Prof. Husseini U. Tsaku</li>
+                  <li>3. Dr Bem Alfred Abugh</li>
+                  <li>4. Dr Elijah Tersoo Ikpanor</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="papers-group-header">
+            <h3 class="subsection-title centered">ABSTRACTS BY THEME</h3>
+          </div>
+
+          <div class="papers-container" id="papers-container">
+            <!-- Papers will be loaded here by JavaScript -->
+            <div class="papers-loading">
+              <i data-lucide="loader-2" class="spin-icon"></i>
+              <span>Loading papers...</span>
+            </div>
+          </div>
+
+          <div
+            class="papers-actions centered"
+            style="margin-top: var(--space-8)"
+          >
+            <button
+              id="load-more-papers"
+              class="btn btn-outline"
+              style="display: none"
+            >
+              Load More Papers
+            </button>
+          </div>
+        </div>
+      </section>
+
       <!-- ===== REGISTRATION SECTION ===== -->
       <section class="registration-section fade-in-section" id="registration">
         <div class="container">
@@ -860,17 +969,23 @@
           <div class="hotel-travel-grid">
             <!-- Hotels -->
             <div class="info-group">
-              <h3 class="group-title"><i data-lucide="building-2"></i> Designated Conference Hotels</h3>
-              <p class="group-desc">Breakfast/meals are separately charged for all hotels.</p>
-              
+              <h3 class="group-title">
+                <i data-lucide="building-2"></i> Designated Conference Hotels
+              </h3>
+              <p class="group-desc">
+                Breakfast/meals are separately charged for all hotels.
+              </p>
+
               <div class="hotel-cards">
                 <div class="hotel-card">
                   <div class="hotel-badge comfort">Comfort Budget</div>
                   <h4>Novel Suites</h4>
-                  <p class="hotel-address">No. 75, Shaka Road, Behind Todow House, Rayfield, Jos</p>
+                  <p class="hotel-address">
+                    No. 75, Shaka Road, Behind Todow House, Rayfield, Jos
+                  </p>
                   <p class="hotel-rates">Rates: ₦40,000 - ₦300,000</p>
                 </div>
-                
+
                 <div class="hotel-card">
                   <div class="hotel-badge average">Average Budget</div>
                   <h4>Steffan Hotel and Suites</h4>
@@ -882,7 +997,9 @@
                 <div class="hotel-card">
                   <div class="hotel-badge low">Low Budget</div>
                   <h4>De Eden Motel</h4>
-                  <p class="hotel-address">No. 8, Liberty Dam Road, Jos (Near Plateau Private School)</p>
+                  <p class="hotel-address">
+                    No. 8, Liberty Dam Road, Jos (Near Plateau Private School)
+                  </p>
                   <p class="hotel-contact">Contact: 08036136585</p>
                   <p class="hotel-rates">Rates: ₦10,000 - ₦27,000</p>
                 </div>
@@ -890,37 +1007,100 @@
 
               <div class="transport-note">
                 <h4><i data-lucide="bus"></i> Local Transportation</h4>
-                <p><strong>LOC WILL provide local transportation between the Hotels and the University.</strong></p>
-                <p>Buses will leave Novel Suites and Steffan Hotel and Suites at 7:30 am daily and return only after the close of the day's business.</p>
-                <p>De Eden Hotel is only one drop of N500 by Napep to the University's main gate at Naraguta Campus. Inside the University are Keke Napep and motorbikes to various faculties at N200/person.</p>
+                <p>
+                  <strong
+                    >LOC WILL provide local transportation between the Hotels
+                    and the University.</strong
+                  >
+                </p>
+                <p>
+                  Buses will leave Novel Suites and Steffan Hotel and Suites at
+                  7:30 am daily and return only after the close of the day's
+                  business.
+                </p>
+                <p>
+                  De Eden Hotel is only one drop of N500 by Napep to the
+                  University's main gate at Naraguta Campus. Inside the
+                  University are Keke Napep and motorbikes to various faculties
+                  at N200/person.
+                </p>
               </div>
             </div>
 
             <!-- Travel Info -->
             <div class="info-group">
-              <h3 class="group-title"><i data-lucide="plane"></i> Travel Information</h3>
-              
+              <h3 class="group-title">
+                <i data-lucide="plane"></i> Travel Information
+              </h3>
+
               <div class="travel-section">
                 <h4>By Air</h4>
-                <p style="margin-bottom: var(--space-2)">The Jos airport has two options:</p>
+                <p style="margin-bottom: var(--space-2)">
+                  The Jos airport has two options:
+                </p>
                 <ul>
-                  <li><i data-lucide="check-circle-2"></i> Lagos-Jos-Lagos operated by Arik and ValueJet</li>
-                  <li><i data-lucide="check-circle-2"></i> Abuja-Jos-Abuja operated by ValueJet</li>
+                  <li>
+                    <i data-lucide="check-circle-2"></i> Lagos-Jos-Lagos
+                    operated by Arik and ValueJet
+                  </li>
+                  <li>
+                    <i data-lucide="check-circle-2"></i> Abuja-Jos-Abuja
+                    operated by ValueJet
+                  </li>
                 </ul>
-                <p class="travel-alert">Please check their flying days to be sure your choice airline offers your visit days.</p>
-                <p style="font-size: var(--text-sm); margin-top: var(--space-3);">If coming by Air, let LOC know your flying dates and time for airport pick up / drop off.<br><strong>Call Panshak Lar: 07035595522</strong> when you board and give expected arrival time.</p>
+                <p class="travel-alert">
+                  Please check their flying days to be sure your choice airline
+                  offers your visit days.
+                </p>
+                <p
+                  style="font-size: var(--text-sm); margin-top: var(--space-3)"
+                >
+                  If coming by Air, let LOC know your flying dates and time for
+                  airport pick up / drop off.<br /><strong
+                    >Call Panshak Lar: 07035595522</strong
+                  >
+                  when you board and give expected arrival time.
+                </p>
               </div>
 
               <div class="travel-section">
                 <h4><i data-lucide="car"></i> By Road</h4>
-                <p style="font-size: var(--text-sm); margin-bottom: var(--space-3);"><strong>From Southern Nigeria, Middle Belt, Central Nigeria, Taraba & Kaduna:</strong><br>
-                Vehicles arrive through Mararaban Jama'a and Bukuru. Drop at Bukuru and call LOC (07035595522) for direction to Novel Suites or Steffan. If staying in Eden Motel, drop at Secretariat overhead bridge or British American Junction overhead bridge and call for direction.</p>
-                
-                <p style="font-size: var(--text-sm); margin-bottom: var(--space-3);"><strong>From Northwest Nigeria:</strong> Most transporters stop at Farin Gada.<br>
-                <strong>From Northeast Nigeria:</strong> Most transporters stop at Bauchi Road campus or Terminus. These are 2-4 drops from Novel Suites/Steffan.</p>
-                
+                <p
+                  style="
+                    font-size: var(--text-sm);
+                    margin-bottom: var(--space-3);
+                  "
+                >
+                  <strong
+                    >From Southern Nigeria, Middle Belt, Central Nigeria, Taraba
+                    & Kaduna:</strong
+                  ><br />
+                  Vehicles arrive through Mararaban Jama'a and Bukuru. Drop at
+                  Bukuru and call LOC (07035595522) for direction to Novel
+                  Suites or Steffan. If staying in Eden Motel, drop at
+                  Secretariat overhead bridge or British American Junction
+                  overhead bridge and call for direction.
+                </p>
+
+                <p
+                  style="
+                    font-size: var(--text-sm);
+                    margin-bottom: var(--space-3);
+                  "
+                >
+                  <strong>From Northwest Nigeria:</strong> Most transporters
+                  stop at Farin Gada.<br />
+                  <strong>From Northeast Nigeria:</strong> Most transporters
+                  stop at Bauchi Road campus or Terminus. These are 2-4 drops
+                  from Novel Suites/Steffan.
+                </p>
+
                 <div class="travel-alert warning">
-                  <p>Please ensure you depart your hometown early to ensure early arrival in Jos. Avoid late night travels so that the LOC is not overstretched waiting to receive you.</p>
+                  <p>
+                    Please ensure you depart your hometown early to ensure early
+                    arrival in Jos. Avoid late night travels so that the LOC is
+                    not overstretched waiting to receive you.
+                  </p>
                 </div>
               </div>
             </div>
@@ -1273,6 +1453,7 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/tofac2026papers.js"></script>
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/tofac2026.js"></script>
     <!-- <script src="/script.js"></script> -->
   </body>
