@@ -393,23 +393,50 @@ function initPapersAccordions() {
     if (data.length > 0 && data[0].group) {
       // Grouped format
       data.forEach(groupObj => {
-        const groupHeader = document.createElement("h3");
+        const groupWrapper = document.createElement("div");
+        groupWrapper.className = "group-wrapper";
+        
+        const groupHeader = document.createElement("button");
         groupHeader.className = "group-header";
-        groupHeader.textContent = groupObj.group;
-        container.appendChild(groupHeader);
+        groupHeader.setAttribute("aria-expanded", "false");
+        groupHeader.innerHTML = `
+          <h3 class="group-title">${groupObj.group}</h3>
+          <i data-lucide="chevron-down" class="group-icon"></i>
+        `;
+        
+        const groupContent = document.createElement("div");
+        groupContent.className = "group-content";
+        groupContent.style.display = "none";
+        
+        groupWrapper.appendChild(groupHeader);
+        groupWrapper.appendChild(groupContent);
+        container.appendChild(groupWrapper);
         
         groupObj.papers.forEach(paper => {
-          renderAccordion(paper);
+          renderAccordion(paper, groupContent);
+        });
+
+        groupHeader.addEventListener("click", () => {
+          const isActive = groupWrapper.classList.contains("active");
+          if (!isActive) {
+            groupWrapper.classList.add("active");
+            groupHeader.setAttribute("aria-expanded", "true");
+            groupContent.style.display = "flex";
+          } else {
+            groupWrapper.classList.remove("active");
+            groupHeader.setAttribute("aria-expanded", "false");
+            groupContent.style.display = "none";
+          }
         });
       });
     } else {
       // Flat array format
       data.forEach(paper => {
-        renderAccordion(paper);
+        renderAccordion(paper, container);
       });
     }
 
-    function renderAccordion(paper) {
+    function renderAccordion(paper, parentElement) {
       const accordion = document.createElement("div");
       accordion.className = "paper-accordion";
       
@@ -428,7 +455,7 @@ function initPapersAccordions() {
         </div>
       `;
       
-      container.appendChild(accordion);
+      parentElement.appendChild(accordion);
       
       // Add click event for the accordion
       const header = accordion.querySelector(".paper-header");
