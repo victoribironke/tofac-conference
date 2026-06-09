@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initSmoothScroll();
   initNewsletterForm();
   initStatCounters();
+  initPapersAccordions();
 });
 
 /**
@@ -354,3 +355,112 @@ document.addEventListener("DOMContentLoaded", function () {
     card.style.setProperty("--index", index);
   });
 });
+
+/**
+ * Accepted Papers Accordions
+ */
+function initPapersAccordions() {
+  const container = document.getElementById("papers-container");
+  const loadMoreBtn = document.getElementById("load-more-papers");
+  
+  if (!container) return;
+
+  // Simulate an API call or loading delay for realism
+  setTimeout(() => {
+    container.innerHTML = ""; // Clear loading state
+    
+    // Check if papersData is loaded from papers.js
+    if (typeof papersData !== 'undefined' && papersData.length > 0) {
+      renderPapers(papersData);
+    } else {
+      container.innerHTML = "<p style='text-align:center;'>No papers data found. Please ensure papers.js is loaded.</p>";
+    }
+    
+    // Show load more button if there's more to load
+    if (loadMoreBtn) {
+      loadMoreBtn.style.display = "inline-flex";
+      loadMoreBtn.addEventListener("click", () => {
+        loadMoreBtn.textContent = "Loading...";
+        setTimeout(() => {
+          loadMoreBtn.style.display = "none";
+          alert("All papers are currently loaded.");
+        }, 1000);
+      });
+    }
+  }, 1000);
+
+  function renderPapers(data) {
+    if (data.length > 0 && data[0].group) {
+      // Grouped format
+      data.forEach(groupObj => {
+        const groupHeader = document.createElement("h3");
+        groupHeader.className = "group-header";
+        groupHeader.textContent = groupObj.group;
+        container.appendChild(groupHeader);
+        
+        groupObj.papers.forEach(paper => {
+          renderAccordion(paper);
+        });
+      });
+    } else {
+      // Flat array format
+      data.forEach(paper => {
+        renderAccordion(paper);
+      });
+    }
+
+    function renderAccordion(paper) {
+      const accordion = document.createElement("div");
+      accordion.className = "paper-accordion";
+      
+      accordion.innerHTML = `
+        <button class="paper-header" aria-expanded="false">
+          <div class="paper-info">
+            <h3 class="paper-title">${paper.title}</h3>
+            <span class="paper-author">${paper.author}</span>
+          </div>
+          <i data-lucide="chevron-down" class="paper-icon"></i>
+        </button>
+        <div class="paper-content">
+          <div class="paper-content-inner">
+            <p class="paper-abstract">${paper.abstract}</p>
+          </div>
+        </div>
+      `;
+      
+      container.appendChild(accordion);
+      
+      // Add click event for the accordion
+      const header = accordion.querySelector(".paper-header");
+      const content = accordion.querySelector(".paper-content");
+      
+      header.addEventListener("click", () => {
+        const isActive = accordion.classList.contains("active");
+        
+        // Close all other accordions
+        document.querySelectorAll(".paper-accordion.active").forEach(acc => {
+          if (acc !== accordion) {
+            acc.classList.remove("active");
+            acc.querySelector(".paper-header").setAttribute("aria-expanded", "false");
+            acc.querySelector(".paper-content").style.maxHeight = null;
+          }
+        });
+        
+        if (!isActive) {
+          accordion.classList.add("active");
+          header.setAttribute("aria-expanded", "true");
+          content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+          accordion.classList.remove("active");
+          header.setAttribute("aria-expanded", "false");
+          content.style.maxHeight = null;
+        }
+      });
+    }
+    
+    // Initialize icons for the newly added elements
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  }
+}
